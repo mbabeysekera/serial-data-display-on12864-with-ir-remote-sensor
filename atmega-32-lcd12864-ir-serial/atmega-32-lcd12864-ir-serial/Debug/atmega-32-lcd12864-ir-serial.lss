@@ -1,0 +1,408 @@
+
+atmega-32-lcd12864-ir-serial.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000006c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  0000026c  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  0000026c  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  0000029b  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000048  00000000  00000000  000002a9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000c00  00000000  00000000  000002f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000630  00000000  00000000  00000ef1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000003ab  00000000  00000000  00001521  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000007c  00000000  00000000  000018cc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000001bc  00000000  00000000  00001948  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000024a  00000000  00000000  00001b04  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000038  00000000  00000000  00001d4e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  000001ea  000001ea  0000025e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001d88  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.initDebugLED 0000000e  000001dc  000001dc  00000250  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.heartbeat 0000001a  000001ac  000001ac  00000220  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.lcdCommandEnablePulse 00000026  00000166  00000166  000001da  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.lcdCommand 00000042  00000124  00000124  00000198  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.initLCD128X64 000000b8  0000006c  0000006c  000000e0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.main    00000020  0000018c  0000018c  00000200  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.__dummy_fini 00000002  000001f2  000001f2  00000266  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text.__dummy_funcs_on_exit 00000002  000001f4  000001f4  00000268  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 22 .text.__dummy_simulator_exit 00000002  000001f6  000001f6  0000026a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 23 .text.exit    00000016  000001c6  000001c6  0000023a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .text._Exit   00000004  000001ee  000001ee  00000262  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+   8:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+   c:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  10:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  14:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  18:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  1c:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  20:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  24:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  28:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  2c:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  30:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  34:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  38:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  3c:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  40:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  44:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  48:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  4c:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+  50:	0c 94 f5 00 	jmp	0x1ea	; 0x1ea <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 c6 00 	call	0x18c	; 0x18c <main>
+  64:	0c 94 e3 00 	jmp	0x1c6	; 0x1c6 <exit>
+
+00000068 <_exit>:
+  68:	f8 94       	cli
+
+0000006a <__stop_program>:
+  6a:	ff cf       	rjmp	.-2      	; 0x6a <__stop_program>
+
+Disassembly of section .text:
+
+000001ea <__bad_interrupt>:
+ 1ea:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.initDebugLED:
+
+000001dc <initDebugLED>:
+#endif
+#pragma once
+#include <util/delay.h>
+
+void initDebugLED() {
+	PORTD |= (1 << DEBUG_LED);
+ 1dc:	82 b3       	in	r24, 0x12	; 18
+ 1de:	80 68       	ori	r24, 0x80	; 128
+ 1e0:	82 bb       	out	0x12, r24	; 18
+	DDRD |= (1 << DEBUG_LED);
+ 1e2:	81 b3       	in	r24, 0x11	; 17
+ 1e4:	80 68       	ori	r24, 0x80	; 128
+ 1e6:	81 bb       	out	0x11, r24	; 17
+ 1e8:	08 95       	ret
+
+Disassembly of section .text.heartbeat:
+
+000001ac <heartbeat>:
+}
+
+void heartbeat() {
+	PORTD ^= (1 << DEBUG_LED);
+ 1ac:	82 b3       	in	r24, 0x12	; 18
+ 1ae:	80 58       	subi	r24, 0x80	; 128
+ 1b0:	82 bb       	out	0x12, r24	; 18
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1b2:	2f ef       	ldi	r18, 0xFF	; 255
+ 1b4:	80 e7       	ldi	r24, 0x70	; 112
+ 1b6:	92 e0       	ldi	r25, 0x02	; 2
+ 1b8:	21 50       	subi	r18, 0x01	; 1
+ 1ba:	80 40       	sbci	r24, 0x00	; 0
+ 1bc:	90 40       	sbci	r25, 0x00	; 0
+ 1be:	e1 f7       	brne	.-8      	; 0x1b8 <heartbeat+0xc>
+ 1c0:	00 c0       	rjmp	.+0      	; 0x1c2 <heartbeat+0x16>
+ 1c2:	00 00       	nop
+ 1c4:	08 95       	ret
+
+Disassembly of section .text.lcdCommandEnablePulse:
+
+00000166 <lcdCommandEnablePulse>:
+#define LCD12864_RW		PINA1
+#define LCD12864_EN		PINA2
+#define LCD12864_RST	PINC6
+
+void lcdCommandEnablePulse() {
+	PORTA |= (1 << LCD12864_EN);
+ 166:	8b b3       	in	r24, 0x1b	; 27
+ 168:	84 60       	ori	r24, 0x04	; 4
+ 16a:	8b bb       	out	0x1b, r24	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 16c:	8f ec       	ldi	r24, 0xCF	; 207
+ 16e:	97 e0       	ldi	r25, 0x07	; 7
+ 170:	01 97       	sbiw	r24, 0x01	; 1
+ 172:	f1 f7       	brne	.-4      	; 0x170 <lcdCommandEnablePulse+0xa>
+ 174:	00 c0       	rjmp	.+0      	; 0x176 <lcdCommandEnablePulse+0x10>
+ 176:	00 00       	nop
+	_delay_us(500);
+	PORTA &= ~(1 << LCD12864_EN);
+ 178:	8b b3       	in	r24, 0x1b	; 27
+ 17a:	8b 7f       	andi	r24, 0xFB	; 251
+ 17c:	8b bb       	out	0x1b, r24	; 27
+ 17e:	8f ec       	ldi	r24, 0xCF	; 207
+ 180:	97 e0       	ldi	r25, 0x07	; 7
+ 182:	01 97       	sbiw	r24, 0x01	; 1
+ 184:	f1 f7       	brne	.-4      	; 0x182 <lcdCommandEnablePulse+0x1c>
+ 186:	00 c0       	rjmp	.+0      	; 0x188 <lcdCommandEnablePulse+0x22>
+ 188:	00 00       	nop
+ 18a:	08 95       	ret
+
+Disassembly of section .text.lcdCommand:
+
+00000124 <lcdCommand>:
+	_delay_us(500);
+}
+
+void lcdCommand(uint8_t mode, uint8_t data) {
+ 124:	cf 93       	push	r28
+ 126:	c6 2f       	mov	r28, r22
+	if (mode)
+ 128:	88 23       	and	r24, r24
+ 12a:	79 f0       	breq	.+30     	; 0x14a <lcdCommand+0x26>
+	{
+		PORTA = (MASK_4BIT & data) | DATA_MODE;
+ 12c:	86 2f       	mov	r24, r22
+ 12e:	80 7f       	andi	r24, 0xF0	; 240
+ 130:	81 60       	ori	r24, 0x01	; 1
+ 132:	8b bb       	out	0x1b, r24	; 27
+		lcdCommandEnablePulse();
+ 134:	0e 94 b3 00 	call	0x166	; 0x166 <lcdCommandEnablePulse>
+		PORTA = (MASK_4BIT & (data << 4)) | DATA_MODE;
+ 138:	80 e1       	ldi	r24, 0x10	; 16
+ 13a:	c8 9f       	mul	r28, r24
+ 13c:	b0 01       	movw	r22, r0
+ 13e:	11 24       	eor	r1, r1
+ 140:	61 60       	ori	r22, 0x01	; 1
+ 142:	6b bb       	out	0x1b, r22	; 27
+		lcdCommandEnablePulse();
+ 144:	0e 94 b3 00 	call	0x166	; 0x166 <lcdCommandEnablePulse>
+ 148:	0c c0       	rjmp	.+24     	; 0x162 <lcdCommand+0x3e>
+	} else {
+		PORTA = (MASK_4BIT & data);
+ 14a:	86 2f       	mov	r24, r22
+ 14c:	80 7f       	andi	r24, 0xF0	; 240
+ 14e:	8b bb       	out	0x1b, r24	; 27
+		lcdCommandEnablePulse();
+ 150:	0e 94 b3 00 	call	0x166	; 0x166 <lcdCommandEnablePulse>
+		PORTA = (MASK_4BIT & (data << 4));
+ 154:	80 e1       	ldi	r24, 0x10	; 16
+ 156:	c8 9f       	mul	r28, r24
+ 158:	b0 01       	movw	r22, r0
+ 15a:	11 24       	eor	r1, r1
+ 15c:	6b bb       	out	0x1b, r22	; 27
+		lcdCommandEnablePulse();
+ 15e:	0e 94 b3 00 	call	0x166	; 0x166 <lcdCommandEnablePulse>
+	}
+}
+ 162:	cf 91       	pop	r28
+ 164:	08 95       	ret
+
+Disassembly of section .text.initLCD128X64:
+
+0000006c <initLCD128X64>:
+
+void initLCD128X64() {
+	// Enable back light of the LCD
+	PORTC &= ~((1 << LCD12864_BL) | (1 << LCD12864_RST));
+  6c:	85 b3       	in	r24, 0x15	; 21
+  6e:	8f 73       	andi	r24, 0x3F	; 63
+  70:	85 bb       	out	0x15, r24	; 21
+	DDRC |= (1 << LCD12864_BL) | (1 << LCD12864_RST);
+  72:	84 b3       	in	r24, 0x14	; 20
+  74:	80 6c       	ori	r24, 0xC0	; 192
+  76:	84 bb       	out	0x14, r24	; 20
+	// Initialize the display control pins
+	DDRA |= 0XFF; // All pins to output
+  78:	8a b3       	in	r24, 0x1a	; 26
+  7a:	8f ef       	ldi	r24, 0xFF	; 255
+  7c:	8a bb       	out	0x1a, r24	; 26
+	PORTA = 0X00; // Initially all pins set to 0
+  7e:	1b ba       	out	0x1b, r1	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  80:	2f ef       	ldi	r18, 0xFF	; 255
+  82:	80 e7       	ldi	r24, 0x70	; 112
+  84:	92 e0       	ldi	r25, 0x02	; 2
+  86:	21 50       	subi	r18, 0x01	; 1
+  88:	80 40       	sbci	r24, 0x00	; 0
+  8a:	90 40       	sbci	r25, 0x00	; 0
+  8c:	e1 f7       	brne	.-8      	; 0x86 <initLCD128X64+0x1a>
+  8e:	00 c0       	rjmp	.+0      	; 0x90 <initLCD128X64+0x24>
+  90:	00 00       	nop
+	_delay_ms(50);
+	PORTC |= (1 << LCD12864_RST); // Enable Display
+  92:	85 b3       	in	r24, 0x15	; 21
+  94:	80 64       	ori	r24, 0x40	; 64
+  96:	85 bb       	out	0x15, r24	; 21
+	//PORTA = 0B00100000;
+	//lcdCommandEnablePulse();
+	lcdCommand(INSTRUCTION_MODE, INS_LCD12864_FUNCTION_SET);
+  98:	62 e2       	ldi	r22, 0x22	; 34
+  9a:	80 e0       	ldi	r24, 0x00	; 0
+  9c:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(INSTRUCTION_MODE, INS_LCD12864_DISPLAY | INS_LCD12864_DISPLAY_ON);
+  a0:	6c e0       	ldi	r22, 0x0C	; 12
+  a2:	80 e0       	ldi	r24, 0x00	; 0
+  a4:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(INSTRUCTION_MODE, INS_LCD12864_CLEAR);
+  a8:	61 e0       	ldi	r22, 0x01	; 1
+  aa:	80 e0       	ldi	r24, 0x00	; 0
+  ac:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+  b0:	2f ef       	ldi	r18, 0xFF	; 255
+  b2:	80 e7       	ldi	r24, 0x70	; 112
+  b4:	92 e0       	ldi	r25, 0x02	; 2
+  b6:	21 50       	subi	r18, 0x01	; 1
+  b8:	80 40       	sbci	r24, 0x00	; 0
+  ba:	90 40       	sbci	r25, 0x00	; 0
+  bc:	e1 f7       	brne	.-8      	; 0xb6 <initLCD128X64+0x4a>
+  be:	00 c0       	rjmp	.+0      	; 0xc0 <initLCD128X64+0x54>
+  c0:	00 00       	nop
+	_delay_ms(50);
+	lcdCommand(INSTRUCTION_MODE, INS_LCD12864_ENTRY_MODE);
+  c2:	66 e0       	ldi	r22, 0x06	; 6
+  c4:	80 e0       	ldi	r24, 0x00	; 0
+  c6:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	
+	lcdCommand(DATA_MODE, 'H');
+  ca:	68 e4       	ldi	r22, 0x48	; 72
+  cc:	81 e0       	ldi	r24, 0x01	; 1
+  ce:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'e');
+  d2:	65 e6       	ldi	r22, 0x65	; 101
+  d4:	81 e0       	ldi	r24, 0x01	; 1
+  d6:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'l');
+  da:	6c e6       	ldi	r22, 0x6C	; 108
+  dc:	81 e0       	ldi	r24, 0x01	; 1
+  de:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'l');
+  e2:	6c e6       	ldi	r22, 0x6C	; 108
+  e4:	81 e0       	ldi	r24, 0x01	; 1
+  e6:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'o');
+  ea:	6f e6       	ldi	r22, 0x6F	; 111
+  ec:	81 e0       	ldi	r24, 0x01	; 1
+  ee:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, ' ');
+  f2:	60 e2       	ldi	r22, 0x20	; 32
+  f4:	81 e0       	ldi	r24, 0x01	; 1
+  f6:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'W');
+  fa:	67 e5       	ldi	r22, 0x57	; 87
+  fc:	81 e0       	ldi	r24, 0x01	; 1
+  fe:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'o');
+ 102:	6f e6       	ldi	r22, 0x6F	; 111
+ 104:	81 e0       	ldi	r24, 0x01	; 1
+ 106:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'r');
+ 10a:	62 e7       	ldi	r22, 0x72	; 114
+ 10c:	81 e0       	ldi	r24, 0x01	; 1
+ 10e:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'l');
+ 112:	6c e6       	ldi	r22, 0x6C	; 108
+ 114:	81 e0       	ldi	r24, 0x01	; 1
+ 116:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+	lcdCommand(DATA_MODE, 'd');
+ 11a:	64 e6       	ldi	r22, 0x64	; 100
+ 11c:	81 e0       	ldi	r24, 0x01	; 1
+ 11e:	0e 94 92 00 	call	0x124	; 0x124 <lcdCommand>
+ 122:	08 95       	ret
+
+Disassembly of section .text.main:
+
+0000018c <main>:
+#include "hardware/debug/debug_led.h"
+#include "hardware/lcd_12864/lcd_12864.h"
+
+int main(void)
+{
+	initDebugLED();
+ 18c:	0e 94 ee 00 	call	0x1dc	; 0x1dc <initDebugLED>
+ 190:	2f ef       	ldi	r18, 0xFF	; 255
+ 192:	81 ee       	ldi	r24, 0xE1	; 225
+ 194:	94 e0       	ldi	r25, 0x04	; 4
+ 196:	21 50       	subi	r18, 0x01	; 1
+ 198:	80 40       	sbci	r24, 0x00	; 0
+ 19a:	90 40       	sbci	r25, 0x00	; 0
+ 19c:	e1 f7       	brne	.-8      	; 0x196 <main+0xa>
+ 19e:	00 c0       	rjmp	.+0      	; 0x1a0 <main+0x14>
+ 1a0:	00 00       	nop
+	_delay_ms(100);
+	initLCD128X64();
+ 1a2:	0e 94 36 00 	call	0x6c	; 0x6c <__data_load_end>
+    while(1)
+    {
+		heartbeat();
+ 1a6:	0e 94 d6 00 	call	0x1ac	; 0x1ac <heartbeat>
+ 1aa:	fd cf       	rjmp	.-6      	; 0x1a6 <main+0x1a>
+
+Disassembly of section .text.__dummy_fini:
+
+000001f2 <_fini>:
+ 1f2:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+000001f4 <__funcs_on_exit>:
+ 1f4:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+000001f6 <__simulator_exit>:
+ 1f6:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+000001c6 <exit>:
+ 1c6:	ec 01       	movw	r28, r24
+ 1c8:	0e 94 fa 00 	call	0x1f4	; 0x1f4 <__funcs_on_exit>
+ 1cc:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <_fini>
+ 1d0:	ce 01       	movw	r24, r28
+ 1d2:	0e 94 fb 00 	call	0x1f6	; 0x1f6 <__simulator_exit>
+ 1d6:	ce 01       	movw	r24, r28
+ 1d8:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_Exit>
+
+Disassembly of section .text._Exit:
+
+000001ee <_Exit>:
+ 1ee:	0e 94 34 00 	call	0x68	; 0x68 <_exit>

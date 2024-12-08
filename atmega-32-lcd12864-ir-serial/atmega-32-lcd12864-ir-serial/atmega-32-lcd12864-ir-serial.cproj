@@ -79,9 +79,20 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="hardware\debug\debug_led.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hardware\lcd_12864\lcd_12864.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="hardware" />
+    <Folder Include="hardware\debug" />
+    <Folder Include="hardware\lcd_12864" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
