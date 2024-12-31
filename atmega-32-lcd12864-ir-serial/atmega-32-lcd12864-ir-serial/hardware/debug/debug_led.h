@@ -22,6 +22,5 @@ void initDebugLED() {
 
 void heartbeat() {
 	PORTD ^= (1 << DEBUG_LED);
-	_delay_ms(50);
 }
 #endif /* DEBUG_LED_H_ */

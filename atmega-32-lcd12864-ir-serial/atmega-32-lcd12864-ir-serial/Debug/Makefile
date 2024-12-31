@@ -35,7 +35,11 @@ LINKER_SCRIPT_DEP:=
 SUBDIRS :=  \
 ../hardware \
 ../hardware/debug \
-../hardware/lcd_12864
+../hardware/lcd_12864 \
+../hardware/ir_sensor \
+../hardware/timers \
+../lcd_graphics \
+../utility
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
